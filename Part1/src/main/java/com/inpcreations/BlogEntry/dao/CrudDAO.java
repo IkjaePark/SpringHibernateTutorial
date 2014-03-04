@@ -6,20 +6,25 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import javax.annotation.Resource;
+
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Component;
 /**
  * @author      Ikjae Park <park.ikjae@gmail.com>
  * @version     1.0
  * @since       2014-03-03
  */
+@Component( "crudDAO" )
 public class CrudDAO<T> implements ICrudDAO<T>, Serializable
 {
 	private static final long serialVersionUID = -8699164546094431833L;
 	
 	/**
 	 * SessionFactory will be loaded from the configuration
-	 */  
+	 */
+	@Resource(name="SessionFactory")
 	private SessionFactory sessionFactory;
 
 	/**

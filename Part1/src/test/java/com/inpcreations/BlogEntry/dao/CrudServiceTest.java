@@ -2,12 +2,11 @@ package com.inpcreations.BlogEntry.dao;
 
 import static org.junit.Assert.assertEquals;
 
-import javax.annotation.Resource;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -18,7 +17,7 @@ import com.inpcreations.BlogEntry.service.CrudService;
 @ContextConfiguration(locations = "classpath:/context.xml")
 public class CrudServiceTest
 {
-	@Resource(name="CrudService")
+	@Autowired
 	private CrudService<Contact> crudService;
 	
 	private Contact newContact;

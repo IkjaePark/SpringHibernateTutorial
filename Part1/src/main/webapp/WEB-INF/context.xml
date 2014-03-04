@@ -16,14 +16,6 @@
 	<!-- Scans within the base package of the application for @Components to configure as beans -->
 	<context:component-scan base-package="com.inpcreations.BlogEntry" />
 	
-	<bean id="CrudService" class="com.inpcreations.BlogEntry.service.CrudService">
-		<property name="crudDAO" ref="CrudDAO" />
-	</bean>
-	
-	<bean id="CrudDAO" class="com.inpcreations.BlogEntry.dao.CrudDAO">
-		<property name="sessionFactory" ref="SessionFactory" />
-	</bean>
-	
 	<!-- Data Source Declaration -->
 	<bean id="DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />	

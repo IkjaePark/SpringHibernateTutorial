@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.inpcreations.BlogEntry.dao.CrudDAO;
@@ -13,6 +15,7 @@ import com.inpcreations.BlogEntry.dao.CrudDAO;
  * @version     1.0
  * @since       2014-03-03
  */
+@Component( "crudService" )
 @Transactional(readOnly = true)
 public class CrudService<T> implements ICrudService<T>, Serializable
 {
@@ -20,7 +23,8 @@ public class CrudService<T> implements ICrudService<T>, Serializable
 
 	/**
 	 * crudDAO object will be loaded from the configuration (All of the method will utilze the CrudDAO method)
-	 */  
+	 */ 
+	@Autowired
 	private CrudDAO<T> crudDAO;
 	
 	
