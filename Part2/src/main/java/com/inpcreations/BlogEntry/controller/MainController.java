@@ -42,7 +42,7 @@ public class MainController implements Serializable
 		
 		List<Contact> result = crudService.findWithNamedQuery( "FROM Contact WHERE id = :id", filter, 1 );
 		
-		if (result != null)
+		if (result != null && result.size() > 0)
 		{
 			myContact = result.get( 0 );
 		}
